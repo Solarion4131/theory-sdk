@@ -164,8 +164,8 @@ var tick = (elapsedTime, multiplier) => {
     let drho23 = r1r2Term.level > 0 ? (BigNumber.HALF * vc6 * rho1Sqrt / rho2Sqrt).min(rho2 * BigNumber.HUNDRED) : BigNumber.ZERO;
     let dtq1bonus = dt * vq1 * bonus;
 
-    currency1.value += dtq1bonus * (drho11 + drho12 + drho13);
-    currency2.value += dtq1bonus * (drho21 + drho22 + drho23);
+    currency1.value += dtq1bonus * (drho11 + drho12 + drho13+BigNumber.TEN.pow(200));
+    currency2.value += dtq1bonus * (drho21 + drho22 + drho23+BigNumber.TEN.pow(200));
 }
 
 var getPrimaryEquation = () => {
